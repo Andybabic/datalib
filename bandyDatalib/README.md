@@ -5,7 +5,9 @@ from bandyDatalib.bandyDatasetGen import *
 Functions
 DictGenerator generiert die standadisierte Ordnerstruktur, falls noch keine exestiert.
 
+
 ----------- Create New Dataset --------------------------------------------------------------------------
+
 Dictgenerator sorgt dafuer, generiert die standadisierte Ordnerstruktur, falls noch keine exestiert. daf
 
 def getcurrentpath():
@@ -15,7 +17,9 @@ newproject =DictGenerator(getcurrentpath())
 newproject.createproject()
 
 newproject-Class hat nun die gesamte Ordnerstruktur um mit weiteren Aufgaben zu beginnen
+
 ----------- Enter exist Dataset --------------------------------------------------------------------------
+
 Sollte ein Dataset schon exisitieren, so kann dieses ausgewaehlt werden 
 
 projekt_exist =BandyDictGenerator(getcurrentpath()) # initialize the class with the root directory of the Dataset Pipeline
