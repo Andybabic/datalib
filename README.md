@@ -6,7 +6,9 @@ Eine Dokumentation für die aktuellen Funktionen findet ihr auf http://datalib.b
 folgende Module sind für dieses Paket notwendig:
 
 tweepy: https://docs.tweepy.org/en/stable/install.html
+
 Google API Client: https://pypi.org/project/google-api-python-client/
+
 youtube_dl : https://pypi.org/project/youtube_dl/
 
 
