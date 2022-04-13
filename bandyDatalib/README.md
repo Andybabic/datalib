@@ -1,88 +1,77 @@
-# pythonlib
+# CounterSpeech\_Research\_Pipeline
 
-from bandyDatalib.bandyDatasetGen import *
+# Einführung in die Pipeline 
 
-Functions
-DictGenerator generiert die standadisierte Ordnerstruktur, falls noch keine exestiert.
+## 1. Verhaltensregeln:
+- Code ist für uns alle da, sollte ein Datenset weitere Funktionen benötigen, sollte diese in die Pipeline integriert werden und als gecapseltes Modul bereitgestellt und dokumentiert werden.
+- In allen erweiterbaren Abschnitten sind Templates bereitgestellt. Nutze diese, denn die Verbindungen sind bereits vorhaben und helfen dir beim integrieren.
+- bestehende Projekte habe eine abhängikeit von bestehenden Modulen, behandle diese stehts mit vorsicht und verändere keine bestehnden Funktionen.
+- Für die Analyse von Fehlern wird ein Logging Tool bereitgestellt, nutze diese auch
+- Die Namensgebung sollte wie in der Übersicht Struktur.pdf verwendet werde. Sollte eine Änderung nötig sein, so muss diese in der Struktur.drawio übernommen werden un als PDF bereitgestellt werden. Nutze dafür https://app.diagrams.net.
+- Die Dokumentation von Modulen und Models wird sofern nicht anders bestimmt mit Pdoc umgesetzt. In den Templateordner steht alles dafür bereit.
+
+## 1.  Programmierung und Änderungen.
+- Erstelle für neue Module/Modelle eine Kopie des Templates.
+- Benutze festgelegte Datenformate ( siehe Datenformate ).
+- Die Funktionen und Klassennamen sollen eindeutig und beschreibend sein.
+- Kommentare werden entwerder mit **#Kommentar** oder """**Kommentar**""" gekenntzeichnet.
+- Mit # Markierte Kommentare werden in durch Pdoc nicht als Beschreibung übernommen.
 
 
------------ Create New Dataset --------------------------------------------------------------------------
+```python
+    def openJsonToArray(file):
+        """ open a json File and retrun a list of dictionaries """
+        data = importFile(file)
+        data = json.loads(data)
+		#convert data in dictionary
+        dictionary=data
+        return dictionary
+```
 
-Dictgenerator sorgt dafuer, generiert die standadisierte Ordnerstruktur, falls noch keine exestiert. daf
+*Ergebnis mit Pdoc:*
 
-def getcurrentpath():
-    return os.path.dirname(os.path.abspath(__file__))
-
-newproject =DictGenerator(getcurrentpath()) 
-newproject.createproject()
-
-newproject-Class hat nun die gesamte Ordnerstruktur um mit weiteren Aufgaben zu beginnen
-
------------ Enter exist Dataset --------------------------------------------------------------------------
-
-Sollte ein Dataset schon exisitieren, so kann dieses ausgewaehlt werden 
-
-projekt_exist =BandyDictGenerator(getcurrentpath()) # initialize the class with the root directory of the Dataset Pipeline
-projekt_exist = projekt_exist.setProject("002_Dataset") # open an existing project
-
-projekt_exist hat nun die gesamte Ordnerstruktur um mit weiteren Aufgaben zu beginnen
-
-------------Class Variables-------------------------------------------------------------------------
-
-ori= class.original_data_path
-itermediate= class.itermediate_data_path
-cleanDataset= class.clean_dataset_path
-project= class.project_path
-
-Alle Vaiablen verweissen auf die jeweiligen Ordner 
-
-------------Dataset Manager-------------------------------------------------------------------------
-
-oridata=BandyDatasetManager(ori,'youTube_Counterspeech_Dataset.json')
-
-#beim initialisieren werden Daten uebergeben. Die Klasse erkennt durch die Endung alle weiteren Convertierungsschritte und wandelt diese in ein #Array von Dictionarys um.
-
-------------Dataset Manager-------------------------------------------------------------------------
-
-oridata.getSample() # Return Dictionary Entry - einen zufaelligen Datensatz 
-
-oridata.show() # Print Info -  Laenge vom Datensatz sowie die Kopfzeile der Liste
-
-oridata.getRows(Spaltenname,Wert) # Return Array - erstellt ein Array mit selben Wert z.B Binary, ID 
-#print(len(oridata.getRows("Counterspeech", 1)))
-#print(len(oridata.getRows("Counterspeech", 0)))
+####  openJsonToArray: open a json File and retrun a list of dictionaries
+	 def openJsonToArray(file):
+       
 
 
 
-#-----------------------------------------------------------------------------------------------------------------------
-#ywitter crawler
-"""
-consumer_key = '3IQgyFFgzEVkp0JM13q5Oyhz2'
-consumer_key_secret = 'tZHpEGrrCNyNWcUuu6CLAneaXIs0bB8yMC05PSFjcTcPw29JB2'
-access_token = '1048593584495230976-d3jUPWXLAFlJXxw8TYAFVnPvUwVBSQ'
-access_token_secret = 'KVNckfJagv9ZUZylVhZL8O3OgM8t3nbtgUyBMmYi7YXY9'
 
-tweets=TweetCrawl(consumer_key,consumer_key_secret,access_token,access_token_secret)
 
-counterspeechs=oridata.getRows("Counterspeech", 0)
-ids= oridata.getvalue("TweetID",counterspeechs)
+------------
 
-tweetslist=tweets.crawlList(ids)
+## 3. Datenformate
+- Der Input an Daten ist Frei wählbar und kann mittels bestehenden Funktionen in das Arbeitsformat gebracht werden. Als Arbeitsformat wurde List of Dictionary festgelegt.
+`dataset= master.setDataset(master.project.original_data_path,'EXIST2021_training.csv')`
+die var `dataset` ist nun im passenden Format um mit allen Funktionen der Pipeline genutzt zu werden.
 
-print(len(tweetslist))
-print(tweetslist)
 
-"""
-#-----------------------------------------------------------------------------------------------------------------------
-#youtube crawler
-"""
-yb= YoutubeCrawl( 'AIzaSyCVXJoAgiyj6cjL9ynkF9LB3fjF1NnsVV8')
-counterspeechs=oridata.getRows("CounterSpeech", False)
-ids= oridata.getvalue("id",counterspeechs)
-data= yb.crawlList(ids[0:1])
-video=data[0][0]['snippet']['videoId']
 
-download= yb.videodownloader(video,itermediate)
-"""
-#-----------------------------------------------------------------------------------------------------------------------
-#youtube crawler
+**Einzelner Datensatz:**
+```python
+{'test_case': 'EXIST2021', 'id': '005696', 'source': 'twitter', 'language': 'es', 'text': '@sofiaxnuez @miiguelrguezz @Brunofdez_ mi polla en una cerda', 'task1': 'sexist', 'task2': 'sexual-violence'}
+```
+
+**Liste Datensatz:**
+```python
+[{'test_case': 'EXIST2021', 'id': '9873495', 'source': 'twitter', 'language': 'es', 'text': '@sofiaxnuez @miiguelrguezz @Brunofdez_ mi polla en una cerda', 'task1': 'sexist', 'task2': 'sexual'}],
+
+[{'test_case': 'EXIST2021', 'id': '000001', 'source': 'twitter', 'language': 'en', 'text': 'She calls herself "anti-feminazi" how about shut the fucking up on your vile commentary on an elderly responsible citizen tu sach muuch ghani baawri-bewdi hai bey https://t.co/ZMxTDwsY5D', 'task1': 'sexist', 'task2': 'ideological-inequality'}],
+
+[{'test_case': 'EXIST2021', 'id': '345345', 'source': 'twitter', 'language': 'es', 'text': '@sofiaxnuez @miiguelrguezz @Brunofdez_ mi polla en una cerda', 'task1': 'sexist', 'task2': 'sexual-violence'}]
+```
+
+Nach der Aufbereitung der Daten, werden diese in das TSV Format konvertiert und im CleanDataset-Ordner gespeichert.
+
+------------
+
+# Nutzung:
+
+1. um ein neues Datenset einzuspielen, gehe in den Ordner 0001_P_CounterStrike/_0002_Datasets/ und erstelle eine Kopie von Dataset_000_Template
+2. Benne die Kopie nach dem Shema _XXX_Dataset_Name um
+3. Öffne die Datei "dataset_start.ipynb" und führe die erste Zelle aus.
+4. Durch das ausführen wird die Struktur generiert. Im Ornder erscheinen nun mehrere Dateien und Ordner.
+5. Speichere deinen Datensatz im Ordner "001_original_data"
+6. Schreibe den namen deiner Datei in die Variable "name_of_the_file" (z.B. 'Hate_Counter_Dataset.csv' )
+7. Dein Projekt ist startklar und du kannst deinen Datensatz anhand vorefertigte Funktionen erweitern und bearbeiten.
+8. Speichere deine Daten als TSV mit den Headern Text, Class,ID mit den vorgegebenen Funktionen

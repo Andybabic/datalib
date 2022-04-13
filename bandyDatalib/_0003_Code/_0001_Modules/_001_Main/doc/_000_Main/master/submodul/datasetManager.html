@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>_000_Main.master.submodul.datasetManager API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>_000_Main.master.submodul.datasetManager</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import csv
+import json
+import os
+import random
+
+from numpy import append, not_equal
+
+class DatasetManager:
+    &#34;&#34;&#34; This class processes all data in different formats.
+    It serves to read, filter and save the data.
+    All datas are working with a list of dictionaries.
+    &#34;&#34;&#34;
+    
+    file=None
+    directorypath=None
+    dictionary=None
+    data=None
+    
+    log=None
+    &#34;&#34;&#34; log is a class that handles the logging of the master class, 
+    it is a class that is used to log the information, warnings and errors.
+    this class is passed to all modules 
+    &#34;&#34;&#34;
+    log_inf=None
+    &#34;&#34;&#34; every step of the project should be saved, so every log ist saved in the info.log file &#34;&#34;&#34;
+    log_error=None
+    &#34;&#34;&#34; only for crash error handling &#34;&#34;&#34;
+    log_warnlog=None
+    &#34;&#34;&#34; sometimes it the code will work, but the data are not correct but the code will pass. User this log for warnings &#34;&#34;&#34;
+    log_debug=None
+    &#34;&#34;&#34;&#34; I can&#39;t programm without bugs, but the debug log helps me to find bugs &#34;&#34;&#34;
+    
+    def __init__(self,file ,logger ):
+
+        self.file=file
+        self.log= logger
+        self.inflog= logger.InfoLogger(logger,__name__)
+        self.errorlog= logger.ErrorLogger(logger,__name__)
+        self.warnlog= logger.WarningLogger(logger,__name__)
+        self.debug= logger.DebugLogger(logger,__name__)
+        self.data = self.load()
+        #self.checkData()  
+          
+          
+          
+    def load(self):
+        if self.file.endswith(&#39;json&#39;):
+            print(&#34;json is loaded&#34;)
+            return self.openJsonToArray()
+        elif self.file.endswith(&#39;csv&#39;):
+            print(&#34;csv is loaded&#34;)
+            return self.openCSVandLoadToArrayofDicts()
+        elif self.file.endswith(&#39;tsv&#39;):
+            print(&#34;tsv is loaded&#34;)
+            return self.openTSVandLoadToArrayofDicts()
+        else:
+            print(&#34;Data Type is unsupported&#34;)
+            return None
+            
+        
+#-----------------------------------------------------------------------------------------------------------------------        
+    #function to open fomats and load to array of dictionaries
+    def openCSVandLoadToArrayofDicts(self):
+        &#34;&#34;&#34; open a csv and retrun a list of dictionaries &#34;&#34;&#34;
+        with open(self.file, &#39;r&#39;) as csvfile:
+            reader = csv.DictReader(csvfile)
+            self.dictionary= list(reader)
+            return list(reader)
+
+    def openJsonToArray(self):
+        &#34;&#34;&#34; open a json and retrun a list of dictionaries &#34;&#34;&#34;
+        data = self.importFile(self.file)
+        data = json.loads(data)
+        self.dictionary=data
+        return data
+    
+    def openTSVandLoadToArrayofDicts(self,file):
+        &#34;&#34;&#34; open a tsv and retrun a list of dictionaries &#34;&#34;&#34;
+        import csv
+        data = []
+        with open(file, &#39;r&#39;) as f:
+                reader = csv.DictReader(f, delimiter=&#39;\t&#39;)
+                for row in reader:
+                    data.append(row)
+        self.dictionary=data
+        return data
+    
+    def importFile(self,filename):
+        &#34;&#34;&#34; easy import of a file. &#34;&#34;&#34;
+        with open(filename, &#39;r&#39;) as f:
+            return f.read()
+    
+    
+#-----------------------------------------------------------------------------------------------------------------------
+#Dictionary functions   
+    
+    
+    def checkData(self):
+        &#34;&#34;&#34; This function checks if the strukture of the data is correct.&#34;&#34;&#34;
+        heads=[]
+        errordata=[]
+        for key in self.dictionary[0]:
+            heads.append(key)
+        for row in self.dictionary:
+            if len(row) != len(heads):
+                errordata.append(row)
+        return errordata
+           
+                    
+    def removeEntries(self,list_of_dict, list_to_remove):
+        &#34;&#34;&#34; This function removes the entries in the list_to_remove from the list_of_dict. &#34;&#34;&#34;
+        for d in list_to_remove:
+            if d in list_of_dict:
+                list_of_dict.remove(d)
+        return list_of_dict
+       
+
+        
+    def show(self,list=None):
+        &#34;&#34;&#34; return the keys of the dataset &#34;&#34;&#34;
+        if list is not None:
+            data=list
+        else:
+            data=self.dictionary
+        print(str(len(data))+&#39; Rows are loaded&#39; )
+        print()
+        for key in data[0]:
+            print(key)
+            
+    def getSample(self,list=None):
+        &#34;&#34;&#34; This function returns a random sample of the dataset. &#34;&#34;&#34;
+        if list is not None:
+            data=list
+        else:
+            data=self.dictionary
+        return data[random.randint(0,len(data))]
+        
+    def getrandomint(self,min,max):
+        return random.randint(min,max)
+
+    def getRows(self,column,value=None):
+        &#34;&#34;&#34; This function returns all rows that have the same value in the column. Is calue None so all columns are returned. &#34;&#34;&#34;
+        filtered = []
+        for row in self.dictionary:
+            if row[column] == value or value == None:
+                filtered.append(row)
+        return filtered
+    
+
+    
+    def getvalue(self,key,list = None):
+        &#34;&#34;&#34; This function returns the value of the key in the list. Nice to handle IDs.
+        if list is None, the function returns the value of the key in the dataset. &#34;&#34;&#34;
+        results=[]
+        if list == None:
+            list = self.dictionary
+        for row in list:
+            try :
+                results.append(row[key])
+            except:
+                print(&#34;Key not found&#34;)
+                break
+            
+        return results
+        
+        
+    def get(self):
+        &#34;&#34;&#34; rturns the dataset &#34;&#34;&#34;
+        return self.dictionary
+    
+    
+     
+
+    #-----------------------------------------------------------------------------------------------------------------------
+    #Save Data in  tsv
+  
+
+    def saveArrayOfDictionariesAsTSV(self, dictionaryList, filename,path=None, customhead= None):
+        &#34;&#34;&#34; This function saves a list of dictionaries as a tsv file. &#34;&#34;&#34;
+        header = []
+        for key in dictionaryList[0][0]:
+            header.append(key)
+            print(key)
+        if path is not None:
+            filename= os.path.join(path,filename)
+        fieldhead=header
+        if customhead is not None:
+            fieldhead=customhead
+        with open(filename, &#39;w&#39;) as output_file:
+            dw = csv.DictWriter(output_file,  delimiter=&#39;\t&#39;, fieldnames= fieldhead)
+            dw.writeheader()
+            
+            for row in dictionaryList:
+                for data in row:
+                    for i in header:
+                        output_file.write( str(data[i]).replace(&#39;\n&#39;,&#39; &#39;))
+                        if i != header[-1]:
+                            output_file.write(&#39;\t&#39;)
+                output_file.write(&#34;\n&#34;)
+                #dw.writerows(row)
+                
+
+
+    #-----------------------------------------------------------------------------------------------------------------------
+
+    def removeFile(self,filename):
+        &#34;&#34;&#34; This function removes a file. &#34;&#34;&#34;
+        if os.path.exists(filename):
+            os.remove(filename)
+            
+    def removeDuplicates(self,data):
+        &#34;&#34;&#34; This function removes duplicates from a list of dictionaries. &#34;&#34;&#34;
+        uniqueID = []
+        unique = []
+        for row in data:
+            if row not in uniqueID:
+                uniqueID.append(row)
+                unique.append(row)
+        return unique
+
+    def search_for_id_in_list_of_dict(self,searchid, list_of_dict):
+        &#34;&#34;&#34; This function searches for a id in a list of dictionaries. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d[&#39;id&#39;] == searchid:
+                return d
+        return None
+
+    def removeNone(self,list_of_dict):
+        &#34;&#34;&#34; This function removes Entries with None from a list of dictionaries and returns the new list. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d is None:
+                list_of_dict.remove(d)
+        return list_of_dict
+
+    def search_for_id_in_list_of_dict(self,searchID, list_of_dict):
+        &#34;&#34;&#34;&#34; This function searches for a id in a list of dictionaries. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d[&#39;id&#39;] == searchID :
+                return d
+        return None
+
+
+       
+    #return a list of dictionaries with only the selected dictionary keys
+    def reduce (self,list_of_Dict ,select):
+        &#34;&#34;&#34; This function returns a list of dictionaries with only the selected dictionary keys. &#34;&#34;&#34;
+        reduced = []
+        #look in a single row
+        for row in list_of_Dict:
+            reduceRow={} 
+            for s in select:
+                #print(row[s])
+                reduceRow[s]=row[s]
+            reduced.append([ reduceRow  ])
+            
+        return reduced
+        
+        
+    def getKey(self,dictionary, value):
+        &#34;&#34;&#34; This function returns the key of a value in a dictionary. &#34;&#34;&#34;
+        for key, val in dictionary.items():
+            return key 
+        
+    def add(slef,dictionarylist,key,value):
+        &#34;&#34;&#34; This function adds a value to a dictionary. &#34;&#34;&#34;
+        #dictionary[key]=value
+        #return dictionary
+        for dictionary in dictionarylist:
+            
+            dictionary[0][key]=value
+            
+        return dictionarylist
+    
+    def merge(self,datasets=[]):
+        mergedlist=[]
+        for d in datasets:
+            for row in d:
+                mergedlist.append(row)
+        return mergedlist</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager"><code class="flex name class">
+<span>class <span class="ident">DatasetManager</span></span>
+<span>(</span><span>file, logger)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class processes all data in different formats.
+It serves to read, filter and save the data.
+All datas are working with a list of dictionaries.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatasetManager:
+    &#34;&#34;&#34; This class processes all data in different formats.
+    It serves to read, filter and save the data.
+    All datas are working with a list of dictionaries.
+    &#34;&#34;&#34;
+    
+    file=None
+    directorypath=None
+    dictionary=None
+    data=None
+    
+    log=None
+    &#34;&#34;&#34; log is a class that handles the logging of the master class, 
+    it is a class that is used to log the information, warnings and errors.
+    this class is passed to all modules 
+    &#34;&#34;&#34;
+    log_inf=None
+    &#34;&#34;&#34; every step of the project should be saved, so every log ist saved in the info.log file &#34;&#34;&#34;
+    log_error=None
+    &#34;&#34;&#34; only for crash error handling &#34;&#34;&#34;
+    log_warnlog=None
+    &#34;&#34;&#34; sometimes it the code will work, but the data are not correct but the code will pass. User this log for warnings &#34;&#34;&#34;
+    log_debug=None
+    &#34;&#34;&#34;&#34; I can&#39;t programm without bugs, but the debug log helps me to find bugs &#34;&#34;&#34;
+    
+    def __init__(self,file ,logger ):
+
+        self.file=file
+        self.log= logger
+        self.inflog= logger.InfoLogger(logger,__name__)
+        self.errorlog= logger.ErrorLogger(logger,__name__)
+        self.warnlog= logger.WarningLogger(logger,__name__)
+        self.debug= logger.DebugLogger(logger,__name__)
+        self.data = self.load()
+        #self.checkData()  
+          
+          
+          
+    def load(self):
+        if self.file.endswith(&#39;json&#39;):
+            print(&#34;json is loaded&#34;)
+            return self.openJsonToArray()
+        elif self.file.endswith(&#39;csv&#39;):
+            print(&#34;csv is loaded&#34;)
+            return self.openCSVandLoadToArrayofDicts()
+        elif self.file.endswith(&#39;tsv&#39;):
+            print(&#34;tsv is loaded&#34;)
+            return self.openTSVandLoadToArrayofDicts()
+        else:
+            print(&#34;Data Type is unsupported&#34;)
+            return None
+            
+        
+#-----------------------------------------------------------------------------------------------------------------------        
+    #function to open fomats and load to array of dictionaries
+    def openCSVandLoadToArrayofDicts(self):
+        &#34;&#34;&#34; open a csv and retrun a list of dictionaries &#34;&#34;&#34;
+        with open(self.file, &#39;r&#39;) as csvfile:
+            reader = csv.DictReader(csvfile)
+            self.dictionary= list(reader)
+            return list(reader)
+
+    def openJsonToArray(self):
+        &#34;&#34;&#34; open a json and retrun a list of dictionaries &#34;&#34;&#34;
+        data = self.importFile(self.file)
+        data = json.loads(data)
+        self.dictionary=data
+        return data
+    
+    def openTSVandLoadToArrayofDicts(self,file):
+        &#34;&#34;&#34; open a tsv and retrun a list of dictionaries &#34;&#34;&#34;
+        import csv
+        data = []
+        with open(file, &#39;r&#39;) as f:
+                reader = csv.DictReader(f, delimiter=&#39;\t&#39;)
+                for row in reader:
+                    data.append(row)
+        self.dictionary=data
+        return data
+    
+    def importFile(self,filename):
+        &#34;&#34;&#34; easy import of a file. &#34;&#34;&#34;
+        with open(filename, &#39;r&#39;) as f:
+            return f.read()
+    
+    
+#-----------------------------------------------------------------------------------------------------------------------
+#Dictionary functions   
+    
+    
+    def checkData(self):
+        &#34;&#34;&#34; This function checks if the strukture of the data is correct.&#34;&#34;&#34;
+        heads=[]
+        errordata=[]
+        for key in self.dictionary[0]:
+            heads.append(key)
+        for row in self.dictionary:
+            if len(row) != len(heads):
+                errordata.append(row)
+        return errordata
+           
+                    
+    def removeEntries(self,list_of_dict, list_to_remove):
+        &#34;&#34;&#34; This function removes the entries in the list_to_remove from the list_of_dict. &#34;&#34;&#34;
+        for d in list_to_remove:
+            if d in list_of_dict:
+                list_of_dict.remove(d)
+        return list_of_dict
+       
+
+        
+    def show(self,list=None):
+        &#34;&#34;&#34; return the keys of the dataset &#34;&#34;&#34;
+        if list is not None:
+            data=list
+        else:
+            data=self.dictionary
+        print(str(len(data))+&#39; Rows are loaded&#39; )
+        print()
+        for key in data[0]:
+            print(key)
+            
+    def getSample(self,list=None):
+        &#34;&#34;&#34; This function returns a random sample of the dataset. &#34;&#34;&#34;
+        if list is not None:
+            data=list
+        else:
+            data=self.dictionary
+        return data[random.randint(0,len(data))]
+        
+    def getrandomint(self,min,max):
+        return random.randint(min,max)
+
+    def getRows(self,column,value=None):
+        &#34;&#34;&#34; This function returns all rows that have the same value in the column. Is calue None so all columns are returned. &#34;&#34;&#34;
+        filtered = []
+        for row in self.dictionary:
+            if row[column] == value or value == None:
+                filtered.append(row)
+        return filtered
+    
+
+    
+    def getvalue(self,key,list = None):
+        &#34;&#34;&#34; This function returns the value of the key in the list. Nice to handle IDs.
+        if list is None, the function returns the value of the key in the dataset. &#34;&#34;&#34;
+        results=[]
+        if list == None:
+            list = self.dictionary
+        for row in list:
+            try :
+                results.append(row[key])
+            except:
+                print(&#34;Key not found&#34;)
+                break
+            
+        return results
+        
+        
+    def get(self):
+        &#34;&#34;&#34; rturns the dataset &#34;&#34;&#34;
+        return self.dictionary
+    
+    
+     
+
+    #-----------------------------------------------------------------------------------------------------------------------
+    #Save Data in  tsv
+  
+
+    def saveArrayOfDictionariesAsTSV(self, dictionaryList, filename,path=None, customhead= None):
+        &#34;&#34;&#34; This function saves a list of dictionaries as a tsv file. &#34;&#34;&#34;
+        header = []
+        for key in dictionaryList[0][0]:
+            header.append(key)
+            print(key)
+        if path is not None:
+            filename= os.path.join(path,filename)
+        fieldhead=header
+        if customhead is not None:
+            fieldhead=customhead
+        with open(filename, &#39;w&#39;) as output_file:
+            dw = csv.DictWriter(output_file,  delimiter=&#39;\t&#39;, fieldnames= fieldhead)
+            dw.writeheader()
+            
+            for row in dictionaryList:
+                for data in row:
+                    for i in header:
+                        output_file.write( str(data[i]).replace(&#39;\n&#39;,&#39; &#39;))
+                        if i != header[-1]:
+                            output_file.write(&#39;\t&#39;)
+                output_file.write(&#34;\n&#34;)
+                #dw.writerows(row)
+                
+
+
+    #-----------------------------------------------------------------------------------------------------------------------
+
+    def removeFile(self,filename):
+        &#34;&#34;&#34; This function removes a file. &#34;&#34;&#34;
+        if os.path.exists(filename):
+            os.remove(filename)
+            
+    def removeDuplicates(self,data):
+        &#34;&#34;&#34; This function removes duplicates from a list of dictionaries. &#34;&#34;&#34;
+        uniqueID = []
+        unique = []
+        for row in data:
+            if row not in uniqueID:
+                uniqueID.append(row)
+                unique.append(row)
+        return unique
+
+    def search_for_id_in_list_of_dict(self,searchid, list_of_dict):
+        &#34;&#34;&#34; This function searches for a id in a list of dictionaries. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d[&#39;id&#39;] == searchid:
+                return d
+        return None
+
+    def removeNone(self,list_of_dict):
+        &#34;&#34;&#34; This function removes Entries with None from a list of dictionaries and returns the new list. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d is None:
+                list_of_dict.remove(d)
+        return list_of_dict
+
+    def search_for_id_in_list_of_dict(self,searchID, list_of_dict):
+        &#34;&#34;&#34;&#34; This function searches for a id in a list of dictionaries. &#34;&#34;&#34;
+        for d in list_of_dict:
+            if d[&#39;id&#39;] == searchID :
+                return d
+        return None
+
+
+       
+    #return a list of dictionaries with only the selected dictionary keys
+    def reduce (self,list_of_Dict ,select):
+        &#34;&#34;&#34; This function returns a list of dictionaries with only the selected dictionary keys. &#34;&#34;&#34;
+        reduced = []
+        #look in a single row
+        for row in list_of_Dict:
+            reduceRow={} 
+            for s in select:
+                #print(row[s])
+                reduceRow[s]=row[s]
+            reduced.append([ reduceRow  ])
+            
+        return reduced
+        
+        
+    def getKey(self,dictionary, value):
+        &#34;&#34;&#34; This function returns the key of a value in a dictionary. &#34;&#34;&#34;
+        for key, val in dictionary.items():
+            return key 
+        
+    def add(slef,dictionarylist,key,value):
+        &#34;&#34;&#34; This function adds a value to a dictionary. &#34;&#34;&#34;
+        #dictionary[key]=value
+        #return dictionary
+        for dictionary in dictionarylist:
+            
+            dictionary[0][key]=value
+            
+        return dictionarylist
+    
+    def merge(self,datasets=[]):
+        mergedlist=[]
+        for d in datasets:
+            for row in d:
+                mergedlist.append(row)
+        return mergedlist</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.data"><code class="name">var <span class="ident">data</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.dictionary"><code class="name">var <span class="ident">dictionary</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.directorypath"><code class="name">var <span class="ident">directorypath</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.file"><code class="name">var <span class="ident">file</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.log"><code class="name">var <span class="ident">log</span></code></dt>
+<dd>
+<div class="desc"><p>log is a class that handles the logging of the master class,
+it is a class that is used to log the information, warnings and errors.
+this class is passed to all modules</p></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.log_debug"><code class="name">var <span class="ident">log_debug</span></code></dt>
+<dd>
+<div class="desc"><p>" I can't programm without bugs, but the debug log helps me to find bugs</p></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.log_error"><code class="name">var <span class="ident">log_error</span></code></dt>
+<dd>
+<div class="desc"><p>only for crash error handling</p></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.log_inf"><code class="name">var <span class="ident">log_inf</span></code></dt>
+<dd>
+<div class="desc"><p>every step of the project should be saved, so every log ist saved in the info.log file</p></div>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.log_warnlog"><code class="name">var <span class="ident">log_warnlog</span></code></dt>
+<dd>
+<div class="desc"><p>sometimes it the code will work, but the data are not correct but the code will pass. User this log for warnings</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.add"><code class="name flex">
+<span>def <span class="ident">add</span></span>(<span>slef, dictionarylist, key, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function adds a value to a dictionary.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add(slef,dictionarylist,key,value):
+    &#34;&#34;&#34; This function adds a value to a dictionary. &#34;&#34;&#34;
+    #dictionary[key]=value
+    #return dictionary
+    for dictionary in dictionarylist:
+        
+        dictionary[0][key]=value
+        
+    return dictionarylist</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.checkData"><code class="name flex">
+<span>def <span class="ident">checkData</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function checks if the strukture of the data is correct.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def checkData(self):
+    &#34;&#34;&#34; This function checks if the strukture of the data is correct.&#34;&#34;&#34;
+    heads=[]
+    errordata=[]
+    for key in self.dictionary[0]:
+        heads.append(key)
+    for row in self.dictionary:
+        if len(row) != len(heads):
+            errordata.append(row)
+    return errordata</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>rturns the dataset</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self):
+    &#34;&#34;&#34; rturns the dataset &#34;&#34;&#34;
+    return self.dictionary</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.getKey"><code class="name flex">
+<span>def <span class="ident">getKey</span></span>(<span>self, dictionary, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns the key of a value in a dictionary.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getKey(self,dictionary, value):
+    &#34;&#34;&#34; This function returns the key of a value in a dictionary. &#34;&#34;&#34;
+    for key, val in dictionary.items():
+        return key </code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.getRows"><code class="name flex">
+<span>def <span class="ident">getRows</span></span>(<span>self, column, value=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns all rows that have the same value in the column. Is calue None so all columns are returned.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getRows(self,column,value=None):
+    &#34;&#34;&#34; This function returns all rows that have the same value in the column. Is calue None so all columns are returned. &#34;&#34;&#34;
+    filtered = []
+    for row in self.dictionary:
+        if row[column] == value or value == None:
+            filtered.append(row)
+    return filtered</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.getSample"><code class="name flex">
+<span>def <span class="ident">getSample</span></span>(<span>self, list=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns a random sample of the dataset.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSample(self,list=None):
+    &#34;&#34;&#34; This function returns a random sample of the dataset. &#34;&#34;&#34;
+    if list is not None:
+        data=list
+    else:
+        data=self.dictionary
+    return data[random.randint(0,len(data))]</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.getrandomint"><code class="name flex">
+<span>def <span class="ident">getrandomint</span></span>(<span>self, min, max)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getrandomint(self,min,max):
+    return random.randint(min,max)</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.getvalue"><code class="name flex">
+<span>def <span class="ident">getvalue</span></span>(<span>self, key, list=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns the value of the key in the list. Nice to handle IDs.
+if list is None, the function returns the value of the key in the dataset.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getvalue(self,key,list = None):
+    &#34;&#34;&#34; This function returns the value of the key in the list. Nice to handle IDs.
+    if list is None, the function returns the value of the key in the dataset. &#34;&#34;&#34;
+    results=[]
+    if list == None:
+        list = self.dictionary
+    for row in list:
+        try :
+            results.append(row[key])
+        except:
+            print(&#34;Key not found&#34;)
+            break
+        
+    return results</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.importFile"><code class="name flex">
+<span>def <span class="ident">importFile</span></span>(<span>self, filename)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>easy import of a file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def importFile(self,filename):
+    &#34;&#34;&#34; easy import of a file. &#34;&#34;&#34;
+    with open(filename, &#39;r&#39;) as f:
+        return f.read()</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load(self):
+    if self.file.endswith(&#39;json&#39;):
+        print(&#34;json is loaded&#34;)
+        return self.openJsonToArray()
+    elif self.file.endswith(&#39;csv&#39;):
+        print(&#34;csv is loaded&#34;)
+        return self.openCSVandLoadToArrayofDicts()
+    elif self.file.endswith(&#39;tsv&#39;):
+        print(&#34;tsv is loaded&#34;)
+        return self.openTSVandLoadToArrayofDicts()
+    else:
+        print(&#34;Data Type is unsupported&#34;)
+        return None</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.merge"><code class="name flex">
+<span>def <span class="ident">merge</span></span>(<span>self, datasets=[])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge(self,datasets=[]):
+    mergedlist=[]
+    for d in datasets:
+        for row in d:
+            mergedlist.append(row)
+    return mergedlist</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.openCSVandLoadToArrayofDicts"><code class="name flex">
+<span>def <span class="ident">openCSVandLoadToArrayofDicts</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>open a csv and retrun a list of dictionaries</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openCSVandLoadToArrayofDicts(self):
+    &#34;&#34;&#34; open a csv and retrun a list of dictionaries &#34;&#34;&#34;
+    with open(self.file, &#39;r&#39;) as csvfile:
+        reader = csv.DictReader(csvfile)
+        self.dictionary= list(reader)
+        return list(reader)</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.openJsonToArray"><code class="name flex">
+<span>def <span class="ident">openJsonToArray</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>open a json and retrun a list of dictionaries</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openJsonToArray(self):
+    &#34;&#34;&#34; open a json and retrun a list of dictionaries &#34;&#34;&#34;
+    data = self.importFile(self.file)
+    data = json.loads(data)
+    self.dictionary=data
+    return data</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.openTSVandLoadToArrayofDicts"><code class="name flex">
+<span>def <span class="ident">openTSVandLoadToArrayofDicts</span></span>(<span>self, file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>open a tsv and retrun a list of dictionaries</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openTSVandLoadToArrayofDicts(self,file):
+    &#34;&#34;&#34; open a tsv and retrun a list of dictionaries &#34;&#34;&#34;
+    import csv
+    data = []
+    with open(file, &#39;r&#39;) as f:
+            reader = csv.DictReader(f, delimiter=&#39;\t&#39;)
+            for row in reader:
+                data.append(row)
+    self.dictionary=data
+    return data</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.reduce"><code class="name flex">
+<span>def <span class="ident">reduce</span></span>(<span>self, list_of_Dict, select)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns a list of dictionaries with only the selected dictionary keys.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reduce (self,list_of_Dict ,select):
+    &#34;&#34;&#34; This function returns a list of dictionaries with only the selected dictionary keys. &#34;&#34;&#34;
+    reduced = []
+    #look in a single row
+    for row in list_of_Dict:
+        reduceRow={} 
+        for s in select:
+            #print(row[s])
+            reduceRow[s]=row[s]
+        reduced.append([ reduceRow  ])
+        
+    return reduced</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.removeDuplicates"><code class="name flex">
+<span>def <span class="ident">removeDuplicates</span></span>(<span>self, data)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function removes duplicates from a list of dictionaries.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeDuplicates(self,data):
+    &#34;&#34;&#34; This function removes duplicates from a list of dictionaries. &#34;&#34;&#34;
+    uniqueID = []
+    unique = []
+    for row in data:
+        if row not in uniqueID:
+            uniqueID.append(row)
+            unique.append(row)
+    return unique</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.removeEntries"><code class="name flex">
+<span>def <span class="ident">removeEntries</span></span>(<span>self, list_of_dict, list_to_remove)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function removes the entries in the list_to_remove from the list_of_dict.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeEntries(self,list_of_dict, list_to_remove):
+    &#34;&#34;&#34; This function removes the entries in the list_to_remove from the list_of_dict. &#34;&#34;&#34;
+    for d in list_to_remove:
+        if d in list_of_dict:
+            list_of_dict.remove(d)
+    return list_of_dict</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.removeFile"><code class="name flex">
+<span>def <span class="ident">removeFile</span></span>(<span>self, filename)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function removes a file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeFile(self,filename):
+    &#34;&#34;&#34; This function removes a file. &#34;&#34;&#34;
+    if os.path.exists(filename):
+        os.remove(filename)</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.removeNone"><code class="name flex">
+<span>def <span class="ident">removeNone</span></span>(<span>self, list_of_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function removes Entries with None from a list of dictionaries and returns the new list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeNone(self,list_of_dict):
+    &#34;&#34;&#34; This function removes Entries with None from a list of dictionaries and returns the new list. &#34;&#34;&#34;
+    for d in list_of_dict:
+        if d is None:
+            list_of_dict.remove(d)
+    return list_of_dict</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.saveArrayOfDictionariesAsTSV"><code class="name flex">
+<span>def <span class="ident">saveArrayOfDictionariesAsTSV</span></span>(<span>self, dictionaryList, filename, path=None, customhead=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function saves a list of dictionaries as a tsv file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveArrayOfDictionariesAsTSV(self, dictionaryList, filename,path=None, customhead= None):
+    &#34;&#34;&#34; This function saves a list of dictionaries as a tsv file. &#34;&#34;&#34;
+    header = []
+    for key in dictionaryList[0][0]:
+        header.append(key)
+        print(key)
+    if path is not None:
+        filename= os.path.join(path,filename)
+    fieldhead=header
+    if customhead is not None:
+        fieldhead=customhead
+    with open(filename, &#39;w&#39;) as output_file:
+        dw = csv.DictWriter(output_file,  delimiter=&#39;\t&#39;, fieldnames= fieldhead)
+        dw.writeheader()
+        
+        for row in dictionaryList:
+            for data in row:
+                for i in header:
+                    output_file.write( str(data[i]).replace(&#39;\n&#39;,&#39; &#39;))
+                    if i != header[-1]:
+                        output_file.write(&#39;\t&#39;)
+            output_file.write(&#34;\n&#34;)
+            #dw.writerows(row)</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.search_for_id_in_list_of_dict"><code class="name flex">
+<span>def <span class="ident">search_for_id_in_list_of_dict</span></span>(<span>self, searchID, list_of_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>" This function searches for a id in a list of dictionaries.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search_for_id_in_list_of_dict(self,searchID, list_of_dict):
+    &#34;&#34;&#34;&#34; This function searches for a id in a list of dictionaries. &#34;&#34;&#34;
+    for d in list_of_dict:
+        if d[&#39;id&#39;] == searchID :
+            return d
+    return None</code></pre>
+</details>
+</dd>
+<dt id="_000_Main.master.submodul.datasetManager.DatasetManager.show"><code class="name flex">
+<span>def <span class="ident">show</span></span>(<span>self, list=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>return the keys of the dataset</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show(self,list=None):
+    &#34;&#34;&#34; return the keys of the dataset &#34;&#34;&#34;
+    if list is not None:
+        data=list
+    else:
+        data=self.dictionary
+    print(str(len(data))+&#39; Rows are loaded&#39; )
+    print()
+    for key in data[0]:
+        print(key)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="_000_Main.master.submodul" href="index.html">_000_Main.master.submodul</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager" href="#_000_Main.master.submodul.datasetManager.DatasetManager">DatasetManager</a></code></h4>
+<ul class="">
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.add" href="#_000_Main.master.submodul.datasetManager.DatasetManager.add">add</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.checkData" href="#_000_Main.master.submodul.datasetManager.DatasetManager.checkData">checkData</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.data" href="#_000_Main.master.submodul.datasetManager.DatasetManager.data">data</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.dictionary" href="#_000_Main.master.submodul.datasetManager.DatasetManager.dictionary">dictionary</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.directorypath" href="#_000_Main.master.submodul.datasetManager.DatasetManager.directorypath">directorypath</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.file" href="#_000_Main.master.submodul.datasetManager.DatasetManager.file">file</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.get" href="#_000_Main.master.submodul.datasetManager.DatasetManager.get">get</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.getKey" href="#_000_Main.master.submodul.datasetManager.DatasetManager.getKey">getKey</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.getRows" href="#_000_Main.master.submodul.datasetManager.DatasetManager.getRows">getRows</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.getSample" href="#_000_Main.master.submodul.datasetManager.DatasetManager.getSample">getSample</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.getrandomint" href="#_000_Main.master.submodul.datasetManager.DatasetManager.getrandomint">getrandomint</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.getvalue" href="#_000_Main.master.submodul.datasetManager.DatasetManager.getvalue">getvalue</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.importFile" href="#_000_Main.master.submodul.datasetManager.DatasetManager.importFile">importFile</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.load" href="#_000_Main.master.submodul.datasetManager.DatasetManager.load">load</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.log" href="#_000_Main.master.submodul.datasetManager.DatasetManager.log">log</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.log_debug" href="#_000_Main.master.submodul.datasetManager.DatasetManager.log_debug">log_debug</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.log_error" href="#_000_Main.master.submodul.datasetManager.DatasetManager.log_error">log_error</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.log_inf" href="#_000_Main.master.submodul.datasetManager.DatasetManager.log_inf">log_inf</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.log_warnlog" href="#_000_Main.master.submodul.datasetManager.DatasetManager.log_warnlog">log_warnlog</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.merge" href="#_000_Main.master.submodul.datasetManager.DatasetManager.merge">merge</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.openCSVandLoadToArrayofDicts" href="#_000_Main.master.submodul.datasetManager.DatasetManager.openCSVandLoadToArrayofDicts">openCSVandLoadToArrayofDicts</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.openJsonToArray" href="#_000_Main.master.submodul.datasetManager.DatasetManager.openJsonToArray">openJsonToArray</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.openTSVandLoadToArrayofDicts" href="#_000_Main.master.submodul.datasetManager.DatasetManager.openTSVandLoadToArrayofDicts">openTSVandLoadToArrayofDicts</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.reduce" href="#_000_Main.master.submodul.datasetManager.DatasetManager.reduce">reduce</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.removeDuplicates" href="#_000_Main.master.submodul.datasetManager.DatasetManager.removeDuplicates">removeDuplicates</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.removeEntries" href="#_000_Main.master.submodul.datasetManager.DatasetManager.removeEntries">removeEntries</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.removeFile" href="#_000_Main.master.submodul.datasetManager.DatasetManager.removeFile">removeFile</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.removeNone" href="#_000_Main.master.submodul.datasetManager.DatasetManager.removeNone">removeNone</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.saveArrayOfDictionariesAsTSV" href="#_000_Main.master.submodul.datasetManager.DatasetManager.saveArrayOfDictionariesAsTSV">saveArrayOfDictionariesAsTSV</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.search_for_id_in_list_of_dict" href="#_000_Main.master.submodul.datasetManager.DatasetManager.search_for_id_in_list_of_dict">search_for_id_in_list_of_dict</a></code></li>
+<li><code><a title="_000_Main.master.submodul.datasetManager.DatasetManager.show" href="#_000_Main.master.submodul.datasetManager.DatasetManager.show">show</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
