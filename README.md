@@ -1,6 +1,6 @@
 # Dieses Modul wurde erstellt, um Projekte im Bereich Research auf eine Basis zu vereinheitlichen.
 
-Eine Dokumentation für die aktuellen Funktionen findet ihr auf http://datalib.bandy.at/bandyDataserGen.html
+
 
 
 folgende Module sind für dieses Paket notwendig:
