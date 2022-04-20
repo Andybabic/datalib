@@ -57,10 +57,7 @@ oridata.getRows(Spaltenname,Wert) # Return Array - erstellt ein Array mit selben
 #-----------------------------------------------------------------------------------------------------------------------
 #ywitter crawler
 """
-consumer_key = '3IQgyFFgzEVkp0JM13q5Oyhz2'
-consumer_key_secret = 'tZHpEGrrCNyNWcUuu6CLAneaXIs0bB8yMC05PSFjcTcPw29JB2'
-access_token = '1048593584495230976-d3jUPWXLAFlJXxw8TYAFVnPvUwVBSQ'
-access_token_secret = 'KVNckfJagv9ZUZylVhZL8O3OgM8t3nbtgUyBMmYi7YXY9'
+
 
 tweets=TweetCrawl(consumer_key,consumer_key_secret,access_token,access_token_secret)
 
@@ -76,7 +73,7 @@ print(tweetslist)
 #-----------------------------------------------------------------------------------------------------------------------
 #youtube crawler
 """
-yb= YoutubeCrawl( 'AIzaSyCVXJoAgiyj6cjL9ynkF9LB3fjF1NnsVV8')
+yb= YoutubeCrawl( 'key')
 counterspeechs=oridata.getRows("CounterSpeech", False)
 ids= oridata.getvalue("id",counterspeechs)
 data= yb.crawlList(ids[0:1])
