@@ -7,10 +7,10 @@ import json
 
 class TweetCrawl:
       
-    consumer_key = '3IQgyFFgzEVkp0JM13q5Oyhz2'
-    consumer_key_secret = 'tZHpEGrrCNyNWcUuu6CLAneaXIs0bB8yMC05PSFjcTcPw29JB2'
-    access_token = '1048593584495230976-d3jUPWXLAFlJXxw8TYAFVnPvUwVBSQ'
-    access_token_secret = 'KVNckfJagv9ZUZylVhZL8O3OgM8t3nbtgUyBMmYi7YXY9'    
+    consumer_key = ''
+    consumer_key_secret = ''
+    access_token = '-'
+    access_token_secret = ''    
     tweetDelay=1.5  
     api=None
     
